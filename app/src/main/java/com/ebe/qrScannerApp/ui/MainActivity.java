@@ -1,12 +1,10 @@
-package com.ebe.qrScannerApp;
+package com.ebe.qrScannerApp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.ebe.qrScannerApp.databinding.ActivityMainBinding;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
