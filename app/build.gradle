@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.ebe.qrScannerApp'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.ebe.qrScannerApp"
@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -37,4 +41,8 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    implementation("com.journeyapps:zxing-android-embedded:4.1.0")
+
+
+
 }
