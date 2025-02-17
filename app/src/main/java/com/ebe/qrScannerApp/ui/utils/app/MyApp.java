@@ -1,4 +1,4 @@
-package com.ebe.qrScannerApp.ui.utils;
+package com.ebe.qrScannerApp.ui.utils.app;
 
 import android.app.Application;
 
