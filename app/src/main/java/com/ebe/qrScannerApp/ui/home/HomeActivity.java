@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.ebe.qrScannerApp.R;
 import com.ebe.qrScannerApp.ui.utils.CheckTypes;
 import com.ebe.qrScannerApp.ui.utils.Utils;
 import com.ebe.qrScannerApp.ui.utils.scannerLayout.ScannerActivity;
@@ -76,7 +77,10 @@ public class HomeActivity extends AppCompatActivity {
                 item.setType(contentType);
                 item.setDateTime(Utils.getDatetimeNow());
 
-                saveScan(item);
+                Utils.showDialog(this, contentType, scannedContent, R.drawable.ic_qr_scan, () -> {
+                    saveScan(item);
+                });
+
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
@@ -84,9 +88,14 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupScannerRecycler(List<ScanModel> list) {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true);
+        layoutManager.setStackFromEnd(true);
         scannerAdapter = new ScannerAdapter((item, position) -> {
-            Utils.openUrlLink(getBaseContext(), item.getContent());
+            CheckTypes.checkContentResult(this, item.getContent());
+        }, (item, position) -> {
+            Utils.showDialog(this, "Delete Item.", "Are you sure you want to delete the item?", R.drawable.ic_error, () -> {
+                deleteScan(item.getId());
+            });
         });
         scannerAdapter.setData(list);
         binding.recycler.setLayoutManager(layoutManager);
@@ -99,6 +108,9 @@ public class HomeActivity extends AppCompatActivity {
             if (!scanItems.isEmpty()) {
                 binding.animNoData.setVisibility(View.GONE);
                 binding.imArrowNoData.setVisibility(View.GONE);
+                scanItems.forEach(scanItem -> {
+                    Log.d("dvdnvkdnvkmdv", "setupScannerRecycler: " + scanItem.getContent());
+                });
                 setupScannerRecycler(scanItems);
             } else {
                 binding.animNoData.setVisibility(View.VISIBLE);

@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import com.ebe.qrScannerApp.data.model.ScanModel;
 import com.ebe.qrScannerApp.databinding.LayoutScanItemBinding;
+import com.ebe.qrScannerApp.ui.utils.CheckTypes;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +15,11 @@ public class ScannerAdapter extends RecyclerView.Adapter<ScannerAdapter.ViewHold
 
     private List<ScanModel> list = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
+    private OnDeleteClickListener onDeleteClickListener;
 
-    public ScannerAdapter(OnItemClickListener onItemClickListener) {
+    public ScannerAdapter(OnItemClickListener onItemClickListener, OnDeleteClickListener onDeleteClickListener) {
         this.onItemClickListener = onItemClickListener;
+        this.onDeleteClickListener = onDeleteClickListener;
     }
 
     public void setData(List<ScanModel> list) {
@@ -45,6 +49,10 @@ public class ScannerAdapter extends RecyclerView.Adapter<ScannerAdapter.ViewHold
         void onItemClick(ScanModel item, int position);
     }
 
+    public interface OnDeleteClickListener {
+        void onDeleteClick(ScanModel item, int position);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private LayoutScanItemBinding binding;
@@ -59,10 +67,18 @@ public class ScannerAdapter extends RecyclerView.Adapter<ScannerAdapter.ViewHold
             binding.txtType.setText(item.getType());
             binding.txtDateTime.setText(item.getDateTime());
 
-            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            CheckTypes.checkContentForView(item.getContent(), binding.imOpenLink, binding.cardOpenLink);
+
+            binding.imOpenLink.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     onItemClickListener.onItemClick(item, position);
+                }
+            });
+            binding.imDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onDeleteClickListener.onDeleteClick(item, position);
                 }
             });
         }
