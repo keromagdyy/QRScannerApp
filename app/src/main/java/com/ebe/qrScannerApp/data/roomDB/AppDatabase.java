@@ -10,7 +10,7 @@ import com.ebe.qrScannerApp.data.model.ScanModel;
 
 @Database(
         entities = {ScanModel.class},
-        version = 1,
+        version = 5,
         exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {

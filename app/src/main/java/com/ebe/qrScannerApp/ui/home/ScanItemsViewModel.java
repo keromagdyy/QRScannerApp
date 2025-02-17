@@ -1,4 +1,4 @@
-package com.ebe.qrScannerApp.ui;
+package com.ebe.qrScannerApp.ui.home;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -36,14 +36,14 @@ public class ScanItemsViewModel extends AndroidViewModel {
     public void saveScan(ScanModel scanItem) {
         executorService.execute(() -> {
             repository.saveScanItem(scanItem);
-            fetchAllScans(); // Refresh after saving
+            fetchAllScans();
         });
     }
 
     public void deleteScan(int id) {
         executorService.execute(() -> {
             repository.deleteScanItemFromDb(id);
-            fetchAllScans(); // Refresh after deletion
+            fetchAllScans();
         });
     }
 }

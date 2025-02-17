@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QR Scanner App</string>
+    <string name="powered_by_ebe_kerolos_magdy">Powered by : EBE (Kerolos Magdy)</string>
+    <string name="there_is_no_qr_stored">There is no qr stored.</string>
 </resources>

@@ -16,7 +16,7 @@ public interface ScanDao {
     List<ScanModel> getAllScanItems();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void saveScan(ScanModel team);
+    void saveScan(ScanModel scan);
 
     @Query("DELETE FROM scan WHERE id = :id")
     void deleteScan(int id);
