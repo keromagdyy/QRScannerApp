@@ -22,11 +22,11 @@ An application that enables the user to scan any QR code and asks him whether he
 ## Video:
 Press for Google Drive Button to watch video for app features
 <p>
-  <a href="https://drive.google.com/file/d/1fn9IFrqM7cwwzFKOnAg3MxmsUF6IaWCR/view?usp=sharing" target="_blank"><img alt="Google Play" src="https://img.shields.io/badge/Google%20Drive-4285F4.svg?style=for-the-badge&logo=Google-Drive&logoColor=white" /></a> 
+  <a href=https://drive.google.com/file/d/1kCpcu1EaPrvF3RehxPBKdm8HEwzqKoZf/view?usp=sharing"" target="_blank"><img alt="Google Play" src="https://img.shields.io/badge/Google%20Drive-4285F4.svg?style=for-the-badge&logo=Google-Drive&logoColor=white" /></a> 
 <p>
 
 ## Apk:
 Press for Google Drive Button to download the app as Apk
 <p>
-  <a href="https://drive.google.com/file/d/1kCpcu1EaPrvF3RehxPBKdm8HEwzqKoZf/view?usp=sharing" target="_blank"><img alt="Google Play" src="https://img.shields.io/badge/Google%20Drive-4285F4.svg?style=for-the-badge&logo=Google-Drive&logoColor=white" /></a> 
+  <a href="https://drive.google.com/file/d/1fn9IFrqM7cwwzFKOnAg3MxmsUF6IaWCR/view?usp=sharing" target="_blank"><img alt="Google Play" src="https://img.shields.io/badge/Google%20Drive-4285F4.svg?style=for-the-badge&logo=Google-Drive&logoColor=white" /></a> 
 <p>
