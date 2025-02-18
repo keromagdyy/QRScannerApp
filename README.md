@@ -2,7 +2,7 @@
 
 An application that enables the user to scan any QR code and asks him whether he wants to store it in the database or not. The application determines the type of data contained within the code (url, phone number, sms, location, wifi configuration, etc.). This data can be used to go to the site according to the URL, or to call if it is a phone number, or to view the map if it is a location.
 
-| Splash Screen                                | Home (Stored items)                       | Home (No data)                      | Scanner screen                      |
+| Splash Screen                                | Home Screen (Stored items)                       | Home Screen (No data)                      | Scanner Screen                      |
 |----------------------------------------------|-------------------------------------------|-------------------------------------|-------------------------------------|
 | ![Splash](/images/im_splash.jpg)             | ![Home](/images/im_home.jpg)              | ![Scanner](/images/im_no_data.jpg)  | ![Scanner](/images/im_scan.jpg)     |
 
